@@ -11,8 +11,8 @@ public class Main {
 	public static String note20Amt;
 	public static String note10Amt;
 	public static String note5Amt;
-	public static String euro2Amt;
-	public static String euro1Amt;
+	public static String coin2Amt;
+	public static String coin1Amt;
 	public static String cent50Amt;
 	public static String cent20Amt;
 	public static String cent10Amt;
@@ -31,15 +31,15 @@ public class Main {
 		note20Amt = JOptionPane.showInputDialog("Amount of €20:");
 		note10Amt = JOptionPane.showInputDialog("Amount of €10:");
 		note5Amt = JOptionPane.showInputDialog("Amount of €5:");
-		euro2Amt = JOptionPane.showInputDialog("Amount of €2:");
-		euro1Amt = JOptionPane.showInputDialog("Amount of €1:");
+		coin2Amt = JOptionPane.showInputDialog("Amount of €2:");
+		coin1Amt = JOptionPane.showInputDialog("Amount of €1:");
 		cent50Amt = JOptionPane.showInputDialog("Amount of 50c:");
 		cent20Amt = JOptionPane.showInputDialog("Amount of 20c:");
 		cent10Amt = JOptionPane.showInputDialog("Amount of 10c:");
 		cent5Amt = JOptionPane.showInputDialog("Amount of 5c:");
 		cent2Amt = JOptionPane.showInputDialog("Amount of 2c:");
 		cent1Amt = JOptionPane.showInputDialog("Amount of 1c:");
-		bagsAmt = JOptionPane.showInputDialog("Amount of coin bags:");
+		bagsAmt = JOptionPane.showInputDialog("Do you have any bags of coints?\n(Only works if coin bags are counted correctly)");
 		
 		if(toInt(bagsAmt) > 0) {
 			for (int i = 0 ; i < toInt(bagsAmt) ; i ++) {
@@ -47,8 +47,7 @@ public class Main {
 			}
 		}
 		
-		// System.out.print(df.format(d));
-		
+		// Print the total savings of the user.
 		JOptionPane.showMessageDialog(null,
 				"Total savings:\n" + df.format(calcTotal()),
 				"Total", 
@@ -68,10 +67,10 @@ public class Main {
 		double note5 = toInt(note5Amt) * 5.0;
 		System.out.println("€5: " + note5);
 		
-		double euro2 = toInt(euro2Amt) * 2.0;
+		double euro2 = toInt(coin2Amt) * 2.0;
 		System.out.println("€2: " + euro2);
 		
-		double euro1 = toInt(euro1Amt) * 1.0;
+		double euro1 = toInt(coin1Amt) * 1.0;
 		System.out.println("€1: " + euro1);
 		
 		double cent50 = toInt(cent50Amt) * 0.50;
